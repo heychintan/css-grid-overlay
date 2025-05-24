@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <header class="popup-header">
+      <h1>CSS Grid Overlay</h1>
+      <label class="toggle">
+        <input type="checkbox" id="toggleGrid">
+        <span class="toggle-slider"></span>
+      </label>
+    </header>
+    
+    <div class="popup-content">
+      <!-- Breakpoint Tabs -->
+      <div class="breakpoint-tabs">
+        <button class="tab active" data-breakpoint="desktop" title="Desktop (≥992px)">Desktop</button>
+        <button class="tab" data-breakpoint="tablet" title="Tablet (768px - 991px)">Tablet</button>
+        <button class="tab" data-breakpoint="landscape" title="Mobile Landscape (480px - 767px)">L</button>
+        <button class="tab" data-breakpoint="portrait" title="Mobile Portrait (≤479px)">P</button>
+      </div>
+      
+      <!-- Grid Controls -->
+      <div class="control-sections">
+        <!-- Grid Settings Section -->
+        <div class="control-section">
+          <div class="section-header" data-section="grid">
+            <span class="section-title">Grid Settings</span>
+            <span class="section-arrow">▼</span>
+          </div>
+          <div class="section-content" id="grid-content">
+            <div class="control-group">
+              <label>Max Width</label>
+              <div class="input-with-unit">
+                <input type="number" id="grid-maxwidth" min="0" max="3000" value="1200">
+                <span class="unit">px</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Columns Section -->
+        <div class="control-section">
+          <div class="section-header" data-section="columns">
+            <span class="section-title">Columns</span>
+            <span class="section-arrow">▼</span>
+          </div>
+          <div class="section-content" id="columns-content">
+            <div class="control-group">
+              <label>Count</label>
+              <input type="number" id="columns-count" min="0" max="24" value="12">
+            </div>
+            <div class="control-group">
+              <label>Gutter</label>
+              <div class="input-with-unit">
+                <input type="number" id="columns-gutter" min="0" max="200" value="20">
+                <span class="unit">px</span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label>Margin</label>
+              <div class="input-with-unit">
+                <input type="number" id="columns-margin" min="0" max="200" value="0">
+                <span class="unit">px</span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label>Color</label>
+              <div class="color-control">
+                <input type="color" id="columns-color" value="#ff0000">
+                <input type="number" id="columns-opacity" min="0" max="100" value="10">
+                <span class="unit">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Rows Section -->
+        <div class="control-section">
+          <div class="section-header" data-section="rows">
+            <span class="section-title">Rows</span>
+            <span class="section-arrow">▼</span>
+          </div>
+          <div class="section-content" id="rows-content">
+            <div class="control-group">
+              <label>Count</label>
+              <input type="number" id="rows-count" min="0" max="24" value="0">
+            </div>
+            <div class="control-group">
+              <label>Gutter</label>
+              <div class="input-with-unit">
+                <input type="number" id="rows-gutter" min="0" max="200" value="20">
+                <span class="unit">px</span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label>Margin</label>
+              <div class="input-with-unit">
+                <input type="number" id="rows-margin" min="0" max="200" value="0">
+                <span class="unit">px</span>
+              </div>
+            </div>
+            <div class="control-group">
+              <label>Color</label>
+              <div class="color-control">
+                <input type="color" id="rows-color" value="#ff0000">
+                <input type="number" id="rows-opacity" min="0" max="100" value="10">
+                <span class="unit">%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Footer Actions -->
+      <div class="popup-footer">
+        <button class="btn-secondary" id="resetSettings" title="Reset to default settings">Reset</button>
+        <div class="footer-info">
+          <span class="domain-info" id="domainInfo"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

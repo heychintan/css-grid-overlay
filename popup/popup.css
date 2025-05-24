@@ -1,0 +1,361 @@
+/* Popup Styles - Phase 2 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    width: 340px;
+    max-width: 340px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 13px;
+    color: #333;
+    background: #1a1a1a;
+    user-select: none;
+    max-height: 620px;
+    overflow-y: auto;
+  }
+  
+  .popup-container {
+    background: #2a2a2a;
+    color: #e0e0e0;
+  }
+  
+  /* Header */
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    border-bottom: 1px solid #3a3a3a;
+    background: #2a2a2a;
+  }
+  
+  .popup-header h1 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #ffffff;
+  }
+  
+  /* Toggle Switch */
+  .toggle {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+  }
+  
+  .toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #4a4a4a;
+    transition: .3s;
+    border-radius: 24px;
+  }
+  
+  .toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #1a1a1a;
+    transition: .3s;
+    border-radius: 50%;
+  }
+  
+  .toggle input:checked + .toggle-slider {
+    background-color: #2196F3;
+  }
+  
+  .toggle input:checked + .toggle-slider:before {
+    transform: translateX(18px);
+    background-color: white;
+  }
+  
+  /* Content */
+  .popup-content {
+    padding: 0;
+  }
+  
+  /* Breakpoint Tabs */
+  .breakpoint-tabs {
+    display: flex;
+    padding: 12px;
+    gap: 4px;
+    background: #1a1a1a;
+    border-bottom: 1px solid #3a3a3a;
+  }
+  
+  .tab {
+    flex: 1;
+    padding: 8px 12px;
+    border: none;
+    background: #2a2a2a;
+    color: #888;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s;
+  }
+  
+  .tab:hover {
+    background: #3a3a3a;
+    color: #aaa;
+  }
+  
+  .tab.active {
+    background: #2196F3;
+    color: white;
+  }
+  
+  /* Control Sections */
+  .control-sections {
+    padding: 0;
+  }
+  
+  .control-section {
+    border-bottom: 1px solid #3a3a3a;
+  }
+  
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 16px;
+    cursor: pointer;
+    background: #2a2a2a;
+    transition: background 0.2s;
+  }
+  
+  .section-header:hover {
+    background: #333;
+  }
+  
+  .section-title {
+    font-weight: 500;
+    color: #ffffff;
+    font-size: 13px;
+  }
+  
+  .section-arrow {
+    color: #888;
+    font-size: 10px;
+    transition: transform 0.2s;
+  }
+  
+  .section-header.collapsed .section-arrow {
+    transform: rotate(-90deg);
+  }
+  
+  .section-content {
+    padding: 0 16px 16px;
+    background: #252525;
+  }
+  
+  .section-content.hidden {
+    display: none;
+  }
+  
+  /* Control Groups */
+  .control-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 12px;
+  }
+  
+  .control-group label {
+    color: #bbb;
+    font-size: 12px;
+    min-width: 60px;
+  }
+  
+  /* Inputs */
+  input[type="number"] {
+    width: 80px;
+    padding: 6px 10px;
+    padding-right: 24px;
+    background: #1a1a1a;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    color: #e0e0e0;
+    font-size: 12px;
+    text-align: right;
+    -moz-appearance: textfield;
+  }
+  
+  /* Hide spin buttons */
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type="number"]:focus {
+    outline: none;
+    border-color: #2196F3;
+  }
+  
+  input[type="color"] {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border: 1px solid #3a3a3a;
+    border-radius: 4px;
+    background: #1a1a1a;
+    cursor: pointer;
+  }
+  
+  input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 4px;
+  }
+  
+  input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 2px;
+  }
+  
+  /* Input with Unit */
+  .input-with-unit {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .input-with-unit input {
+    width: 80px;
+  }
+  
+  .input-with-unit .unit {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 11px;
+    pointer-events: none;
+  }
+  
+  .unit {
+    color: #888;
+    font-size: 11px;
+  }
+  
+  /* Color Control */
+  .color-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .color-control input[type="number"] {
+    width: 50px;
+  }
+  
+  /* Disabled state */
+  .popup-content.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  /* Footer */
+  .popup-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: #1a1a1a;
+    border-top: 1px solid #3a3a3a;
+  }
+  
+  .btn-secondary {
+    padding: 6px 14px;
+    background: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    color: #bbb;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  
+  .btn-secondary:hover {
+    background: #3a3a3a;
+    color: #ddd;
+    border-color: #4a4a4a;
+  }
+  
+  .footer-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .domain-info {
+    font-size: 11px;
+    color: #666;
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  /* Tooltips on hover */
+  [title] {
+    position: relative;
+  }
+  
+  /* Smooth transitions */
+  input[type="number"],
+  input[type="color"] {
+    transition: border-color 0.2s;
+  }
+  
+  /* Better focus states */
+  button:focus,
+  input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.3);
+  }
+  
+  /* Prevent text selection */
+  .popup-container {
+    user-select: none;
+  }
+  
+  /* Make number inputs look better */
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+  
+  /* Animation for section toggle */
+  .section-content {
+    transition: all 0.2s ease-out;
+    overflow: hidden;
+  }
+  
+  .section-content.hidden {
+    max-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    opacity: 0;
+  }
